@@ -60,6 +60,7 @@ Enhance search and filtering of cases.
 Expand persistence to a single JSON file containing all registers.
 
 🤝 Contributing
+
 Contributions are welcome! Feel free to fork the project, open issues, or submit pull requests.
 
    
