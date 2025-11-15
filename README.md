@@ -50,6 +50,7 @@ src/
    java -cp bin Main
 
 📌 Next Steps
+
 Add unit tests for core functionalities.
 
 Improve user interface (possibly with a GUI).
