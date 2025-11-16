@@ -2,14 +2,14 @@ package model;
 
 public class Detective extends Person {
     private int badgeNumber;
-    private int systemPassword;
+    private String systemPassword;
     private String systemUsername;
 
     public Detective() {
 
     }
 
-    public Detective(String name, int age, String description, int badgeNumber, int systemPassword, String systemUsername) {
+    public Detective(String name, int age, String description, int badgeNumber, String systemPassword, String systemUsername) {
         super(name, age, description);
         this.badgeNumber = badgeNumber;
         this.systemPassword = systemPassword;
@@ -24,11 +24,11 @@ public class Detective extends Person {
         this.badgeNumber = badgeNumber;
     }
 
-    public int getSystemPassword() {
+    public String getSystemPassword() {
         return systemPassword;
     }
 
-    public void setSystemPassword(int systemPassword) {
+    public void setSystemPassword(String systemPassword) {
         this.systemPassword = systemPassword;
     }
 

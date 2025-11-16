@@ -3,7 +3,6 @@ package services;
 import model.Evidence;
 import model.EvidenceType;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
