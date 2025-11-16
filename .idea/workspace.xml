@@ -7,6 +7,10 @@
     <list default="true" id="e3581cf6-7341-41fc-bc66-85357bf1b0d6" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvestigationManager/src/main/java/app/NewDetectiveRegistration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvestigationManager/src/main/java/model/CaseReports.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvestigationManager/src/main/java/services/Authentication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InvestigationManager/src/main/java/app/DetectiveApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvestigationManager/src/main/java/app/DetectiveApp.java" afterDir="false" />
@@ -72,7 +76,7 @@
       <option name="presentableId" value="Default" />
       <updated>1763304027606</updated>
       <workItem from="1763304029137" duration="1458000" />
-      <workItem from="1763305508550" duration="4003000" />
+      <workItem from="1763305508550" duration="4699000" />
     </task>
     <servers />
   </component>
