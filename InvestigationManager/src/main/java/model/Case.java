@@ -10,6 +10,7 @@ public class Case {
     private List<Suspect> suspectList = new ArrayList<>();
     private List<Clue> clueList = new ArrayList<>();
     private List<Evidence> evidenceList = new ArrayList<>();
+    private List<Detective> detectiveList = new ArrayList<>();
 
     public Case() {
 
@@ -22,6 +23,11 @@ public class Case {
         this.suspectList = new ArrayList<>();
         this.clueList = new ArrayList<>();
         this.evidenceList = new ArrayList<>();
+        this.detectiveList = new ArrayList<>();
+    }
+
+    public void addDetective(Detective detective) {
+        detectiveList.add(detective);
     }
 
     public void addSuspect(Suspect suspect) {
