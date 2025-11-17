@@ -20,6 +20,9 @@ public class CaseRegister {
 
     private DetectiveRegister detectiveRegister;
 
+    private AssignedDetective assignedDetective;
+
+
 
     public CaseRegister(SuspectRegister suspectRegister, ClueRegister clueRegister, EvidenceRegister evidenceRegister, DetectiveRegister detectiveRegister) {
         this.suspectRegister = suspectRegister;
@@ -71,16 +74,38 @@ public class CaseRegister {
      * @param scanner Scanner is used to get user's input
      */
     public void addCase(Scanner scanner) {
+        int id;
+        while (true) {
+            boolean idExist = false;
+            try {
+                System.out.println("Digite o ID do caso: ");
+                id = scanner.nextInt();
+                scanner.nextLine();
+
+                for (Case c : caseList) {
+                    if (c.getId() == id) {
+                        idExist = true;
+                        break;
+                    }
+                }
+                if (idExist) {
+                    System.out.println("ID já cadastrado. Cadastre um ID diferente.");
+                    continue;
+                } break;
+            } catch (InputMismatchException e) {
+                System.out.println("Entrada inválida. Tente novamente");
+                scanner.nextLine();
+            }
+        }
         System.out.println("Digite o título do caso: ");
         String title = scanner.nextLine();
 
         System.out.println("Digite a descrição do caso: ");
         String description = scanner.nextLine();
 
-        System.out.println("Define o status de andamento do caso: ");
         Status status = getStatus(scanner);
 
-        Case newCase = new Case(title, description, status);
+        Case newCase = new Case(title, description, status, id);
 
         while (true) {
             System.out.println("Deseja adicionar um suspeito ao caso? (s/n)");
@@ -107,7 +132,7 @@ public class CaseRegister {
             newCase.addClue(newClue);
         }
         while (true) {
-            System.out.println("Deseja adicionar uma nova evidência ao caso? (s/n)");
+            System.out.println("Deseja adicionar uma evidência ao caso? (s/n)");
             String answer = scanner.nextLine();
             while (!answer.equalsIgnoreCase("s") && !answer.equalsIgnoreCase("n")) {
                 System.out.println("Entrada inválida. Digite 's' para sim ou 'n' para não.");
@@ -119,8 +144,9 @@ public class CaseRegister {
             newCase.addEvidence(newEvidence);
         }
         do {
-            Detective newDetective = detectiveRegister.addDetective(scanner);
-            newCase.addDetective(newDetective);
+            System.out.println("Designe um detetive ao caso: ");
+            AssignedDetective newAssignedDetective = detectiveRegister.assignDetective(scanner);
+            newCase.addAssignedDetective(newAssignedDetective);
 
             System.out.println("Deseja designar mais um detetive ao caso? (s/n)");
             String answer = scanner.nextLine();
@@ -134,5 +160,47 @@ public class CaseRegister {
 
         caseList.add(newCase);
         System.out.println("Caso adicionado com sucesso.");
+    }
+
+    public void showCaseReports(Scanner scanner) {
+        System.out.println("Digite o ID do case que deseja acessar: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+
+        Case foundCase = null;
+        for (Case c : caseList) {
+            if (c.getId() == id) {
+                foundCase = c;
+                break;
+            }
+        }
+        if (foundCase == null) {
+            System.out.println("Nenhum caso encontrado com o ID informado.");
+            return;
+        }
+        System.out.println("--- Detalhes do Caso ---");
+        System.out.println("ID: " + foundCase.getId());
+        System.out.println("Título :" + foundCase.getTitle());
+        System.out.println("Descrição: " + foundCase.getDescription());
+        System.out.println("Status: " + foundCase.getStatus());
+        System.out.println("\n--- Suspeitos ---");
+        for (Suspect suspect : foundCase.getSuspectList()) {
+            System.out.println("- " + suspect.getName() + " (" + suspect.getDescription()+ ")");
+        }
+
+        System.out.println("\n--- Pistas ---");
+        for (Clue clue : foundCase.getClueList()) {
+            System.out.println("- " + clue.getDescription());
+        }
+
+        System.out.println("\n--- Evidências ---");
+        for (Evidence evidence : foundCase.getEvidenceList()) {
+            System.out.println("- " + evidence.getDescription());
+        }
+
+        System.out.println("\n--- Detetives designados ao caso ---");
+        for (AssignedDetective assignedDetective : foundCase.getAssignedDetectiveList()) {
+            System.out.println("- " + assignedDetective.getName() + " - distintivo: " + assignedDetective.getBadgeNumber());
+        }
     }
 }

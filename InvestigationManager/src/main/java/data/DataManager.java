@@ -10,32 +10,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataManager {
-    private ObjectMapper mapper;
+    private final ObjectMapper mapper;
 
     public DataManager() {
+        mapper = new ObjectMapper();
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
         mapper.registerModule(new JavaTimeModule());
     }
 
-    public ObjectMapper getMapper(){
-        return mapper;
-    }
-
-    public void saveCases(List<Case> caseList, String fileName){
-        try{
-            mapper.writeValue(new File(fileName), caseList);
-            System.out.println("Cases salvos em " + fileName);
-        } catch(Exception e) {
+    public <T> void saveList(List<T> list, String fileName) {
+        try {
+            mapper.writeValue(new File(fileName), list);
+            System.out.println("Lista salva em " + fileName);
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public List<Case> loadCases(String fileName) {
+    public <T> List<T> loadList(String fileName, Class<T> clazz) {
         try {
-            return mapper.readValue(new File(fileName), new com.fasterxml.jackson.core.type.TypeReference<List<Case>>() {});
-        } catch(Exception e){
+            return mapper.readValue(new File(fileName), mapper.getTypeFactory().constructCollectionType(List.class, clazz));
+        } catch (Exception e) {
             e.printStackTrace();
             return new ArrayList<>();
         }
+    }
+
+    public ObjectMapper getMapper() {
+        return mapper;
     }
 }

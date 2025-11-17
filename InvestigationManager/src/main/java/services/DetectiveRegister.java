@@ -1,5 +1,7 @@
 package services;
 
+import data.DataManager;
+import model.AssignedDetective;
 import model.Detective;
 
 import java.text.Normalizer;
@@ -99,8 +101,22 @@ public class DetectiveRegister {
 
         Detective detective = new Detective(name, age, description, badgeNumber, systemPassword, systemUsername);
         detectiveList.add(detective);
-
+        System.out.println("Detetive cadastrado com sucesso!");
         return detective;
+    }
+
+    public AssignedDetective assignDetective(Scanner scanner) {
+        DataManager dataManager = new DataManager();
+        List<Detective> detectiveList = dataManager.loadList("detectives.json", Detective.class);
+        Detective authenticated = Authentication.loginAuthentication(scanner, detectiveList);
+
+       if (authenticated != null) {
+           System.out.println("Detetive autenticado com sucesso.");
+           return new AssignedDetective(authenticated.getName(), authenticated.getBadgeNumber());
+       } else {
+           System.out.println("Credenciais inválidas. Não foi possível atribuir o detetive.");
+           return null;
+       }
     }
 
     //Generates a base username based on the detective's last name (gets detective's last name without accents and in lowercase).

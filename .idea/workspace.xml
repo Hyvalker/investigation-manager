@@ -5,20 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3581cf6-7341-41fc-bc66-85357bf1b0d6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvestigationManager/src/main/java/app/NewDetectiveRegistration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvestigationManager/src/main/java/model/CaseReports.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvestigationManager/src/main/java/services/Authentication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvestigationManager/src/main/java/model/AssignedDetective.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detectives.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InvestigationManager/src/main/java/app/DetectiveApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvestigationManager/src/main/java/app/DetectiveApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvestigationManager/src/main/java/model/Detective.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvestigationManager/src/main/java/model/Detective.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvestigationManager/src/main/java/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/InvestigationManager/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvestigationManager/src/main/java/app/NewDetectiveRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvestigationManager/src/main/java/app/NewDetectiveRegistration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvestigationManager/src/main/java/data/DataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvestigationManager/src/main/java/data/DataManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvestigationManager/src/main/java/model/Case.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvestigationManager/src/main/java/model/Case.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvestigationManager/src/main/java/model/CaseReports.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvestigationManager/src/main/java/services/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvestigationManager/src/main/java/services/Authentication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InvestigationManager/src/main/java/services/CaseRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvestigationManager/src/main/java/services/CaseRegister.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InvestigationManager/src/main/java/services/DetectiveRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvestigationManager/src/main/java/services/DetectiveRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvestigationManager/src/main/java/services/EvidenceRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvestigationManager/src/main/java/services/EvidenceRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvestigationManager/src/main/java/services/ReportGenerator.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +44,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.DetectiveApp.executor": "Run",
+    "Application.NewDetectiveRegistration.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -60,6 +60,40 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager" selected="Application.DetectiveApp">
+    <configuration name="DetectiveApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="app.DetectiveApp" />
+      <module name="InvestigationManager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NewDetectiveRegistration" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="app.NewDetectiveRegistration" />
+      <module name="InvestigationManager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DetectiveApp" />
+        <item itemvalue="Application.NewDetectiveRegistration" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -76,7 +110,8 @@
       <option name="presentableId" value="Default" />
       <updated>1763304027606</updated>
       <workItem from="1763304029137" duration="1458000" />
-      <workItem from="1763305508550" duration="4699000" />
+      <workItem from="1763305508550" duration="6282000" />
+      <workItem from="1763323369217" duration="15763000" />
     </task>
     <servers />
   </component>
